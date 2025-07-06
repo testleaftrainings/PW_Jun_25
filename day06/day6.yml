@@ -1,0 +1,191 @@
+09:00 - 10:15 -> Advance Xpath & Assertion
+10:15 - 10:30 -> Break
+10:30 - 11:15 -> Arrays
+11:15 - 11:45 -> Breakout+Break
+11:45 - 01:00 -> Typescript Fundamentals
+01:00 - 01:15 -> Breakout
+
+Basic Xpath:
+attribute, text, partial match(attribute & text), collection or index
+
+collection or index -> index value should go beyond 5
+
+* Parent to child :
+//div[@id='username_container']/input
+
+* GrandParent to GrandChild
+Basic for GP // tag name of GC
+
+* Elder Sibling to Younger Sibling
+Basic Xpathfor ES/following-sibling::tagName of YS
+
+*Elder cousin to Younger cousin
+basic xpath for EC/following::tagName of YC
+
+
+Assertion
+--------
+ element type -->web first assertion -->boolean return
+
+ comparing actual with expected result -->assertion
+
+ Assertion 
+  hard -stops the execution when assertion failed
+  soft -continue the execution and collects the error log 
+
+ expect -->playwright library -timeout 5s
+
+ default timeout for assertion - 5s
+
+ 5s + 10s=> 15s -> inside config file 
+
+
+   non retrying    
+   retrying
+
+Assertion types
+Generic type-> toEqual ,toHaveTitle
+Locator type - > tobeEnabled
+Page Type -> url
+Screenshot assertion
+API assertion
+Negating assertions
+  expect().not.contain()
+
+Actionability check on action
+visible
+stable
+enable
+attached
+receive event
+
+
+
+Array:
+
+collection Data
+Store Multiple data
+it have all types of data [1,'dilip',true] -> pass value inside []
+
+ClassRoom 1
+
+let data=[23,56,32,45,56,78,89,40,78]
+find length
+find duplicate value (nested for loop)
+
+let value-[23,true,'a','r','test',57]
+unshift -> 34
+push ->'js'
+shift
+pop
+
+
+
+
+
+TypeScript :
+
+ Js ->
+*Dynamic Typing
+*Light Weight
+*Run time exception
+*prototype
+
+let emp='dilip'
+emp=34
+emp=true
+
+TS-> superset of JS
+
+TS-> 
+*Static Typing -> type safety
+let val:string
+val="Dilip"
+val='Testleaf'
+val=23-> it will not accpect
+*Heavy weight
+*Compile time exception
+
+Install TypeScrpit
+*Globally
+ -> npm install -g typescript
+
+*Locally 
+-> npm install typescript --save-dev
+
+check Version
+-> tsc --version or tsc -v
+
+Save file in JS JavaScript
+.js
+
+Save file in TS TypeScript
+.ts
+
+to execute js:
+node filename.js
+
+to exceute ts:
+tsc filename.ts
+
+ts->transplied->js
+ts will be complied into js
+automatic it will convert into js code
+
+tsc filename -> filename.js
+
+Install TypeScrpit
+*Globally
+ -> npm install -g typescript
+
+*Locally 
+-> npm install typescript --save-dev
+
+check Version
+-> tsc --version or tsc -v
+
+
+execute:
+cmd-> tsc filename.ts -> convert js
+cmd-> node filename.js -> get output
+
+
+Datatype:
+String
+Number
+Boolean
+Null
+Undefined
+BigNit
+
+let value="js"
+value=56
+
+ts:
+let username="dilip" -> implicty infered as String
+username=2025
+
+
+
+ClassRoom:
+let data:String
+print the value
+
+union:
+let browserDetails:string|number|null
+browsername, browserVersion, browserType
+
+
+
+type alias -> Creating custom type of data
+let value:string
+
+syntax: type typeName=definition
+
+
+
+TypeScript Assertion:
+ Type casting-> informing the typescript complier to inference the data as string,number
+
+ let price;
+ price=500
