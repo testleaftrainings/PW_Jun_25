@@ -1,0 +1,37 @@
+week4.day2
+
+09:00 - 10:00 -> Frame
+10:00 - 10:30 -> Breakout+Break
+10:30 - 11:45 -> WindowHandling
+11:45 - 12:10 -> Breakout 
+12:10 - 01:00 -> Data Parameterization 
+
+* iframe-> InLine Frame
+
+To handle the frame ->
+1.Frame object
+2.Frame Locator
+
+
+
+Window Handling:
+
+- Sequential approach
+- Concurrent approach
+
+Create a promise -> waitforevent('page')
+->listener
+
+click on the button
+
+promise resolved
+
+
+ClassRoom:
+1.load url : https://leafground.com/window.xhtml
+//create promise -> waitforevent('page')
+2.click on Open button
+//resolved promise -> 
+3.get title of the child 
+4.Enter the message
+5.close child window
