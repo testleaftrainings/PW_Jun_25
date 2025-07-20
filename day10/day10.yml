@@ -1,0 +1,66 @@
+Agenda
+
+- FileUpload and FileDownload
+- Skip login / Storage state
+- Class Room
+- Test Runner
+- Class Room
+- grep(tags)
+
+
+File upload
+  -----------
+
+  DOM -->element which takes the file as input -->
+  <input> type="file" </input>
+
+type 1:
+  Setinputfile() -> Uplaod file
+
+type 2:
+  eventlistner -->waitforEvent('filechooser')
+
+
+filter()-->for locator chaining
+
+
+
+
+FileDownload:
+eventlistner-> waitforEvent('download')
+clikc()
+resolve promise
+path-> downloadfile
+
+
+
+
+StorageState -->cookies
+ skip the login-->store the login info
+
+
+ClassRoom: (Storage state)
+Login With SalesForce application
+Load the url  :https://login.salesforce.com/?locale=in
+Enter username : dilip@testleaf.com 
+Enter password : Leaf@123
+click on Login
+
+Case 1:
+click App launcher
+click on Services
+click on Accounts
+click on New
+
+
+Test Runner:
+
+Test Annotation: configure the Behaviour of the test
+test.only -> run the test which marked as only
+test.skip -> test will not run
+test.fail -> Mark test as expected to fail
+test.fixme -> mark test as not ready yet
+test.use -> override context 
+test.info -> it shows additional information about test
+test.describe -> group your test
+
