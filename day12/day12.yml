@@ -1,0 +1,49 @@
+Agenda
+week6.day2
+
+-> SalesForce API with Postman
+-> API Integration with Playwright(serives Now only Post,Get,Patch  )
+-> Classroom
+-> Break 
+-> End to End Scenario
+->Classroom
+
+
+client_id  : 3MVG9pRzvMkjMb6ke6ofxazCMMcU6CprOCcHzxnBYiKLgd.30T0TdvXmIg4tswuUDQNAxTV7Gs8LIBpV8auFx
+client_secret : 0EA32C55BC1E9B1C5D3118ABD72D03F791DA858C3F2C62229315E612021C5276
+
+
+
+https://login.salesforce.com//services/oauth2/token	
+
+
+URI:
+https://{{SF_Instance_Url}}/services/data/v64.0/sobjects/Account/
+
+Authentication:
+Beare
+
+
+API Testing:
+
+Api Doc
+uri -> Endpoint
+parameters -> path /query
+payload/body
+Http Methods
+Auth details
+Headers
+Response code/status code
+ResponseBody
+
+-> page fixture{page}
+const browser=await BrowserType.launch()
+const context=await browser.newContext()
+const page=await context.newPage()
+
+
+Playwright with API
+-> request fixture({request})
+const browser=await BrowserType.launch()
+const context=await browser.newContext()
+const page=await context.request -> APIRequestcontext
