@@ -1,0 +1,222 @@
+{
+	"info": {
+		"_postman_id": "7677096b-f526-46c7-bc39-84237c3639ef",
+		"name": "SF_API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "34817915"
+	},
+	"item": [
+		{
+			"name": "Create_Token",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var res=pm.response.json()\r",
+							"\r",
+							"var acc_token=res.access_token\r",
+							"var inst_url=res.instance_url\r",
+							"\r",
+							"pm.globals.set(\"SF_Access_Token\",acc_token)\r",
+							"pm.globals.set(\"SF_Instance_Url\",inst_url)"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "grant_type",
+							"value": "password",
+							"type": "text"
+						},
+						{
+							"key": "client_id",
+							"value": "3MVG9pRzvMkjMb6ke6ofxazCMMcU6CprOCcHzxnBYiKLgd.30T0TdvXmIg4tswuUDQNAxTV7Gs8LIBpV8auFx",
+							"type": "text"
+						},
+						{
+							"key": "username",
+							"value": "dilip@testleaf.com",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "Leaf@123",
+							"type": "text"
+						},
+						{
+							"key": "client_secret",
+							"value": "0EA32C55BC1E9B1C5D3118ABD72D03F791DA858C3F2C62229315E612021C5276\n",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://login.salesforce.com//services/oauth2/token",
+					"protocol": "https",
+					"host": [
+						"login",
+						"salesforce",
+						"com"
+					],
+					"path": [
+						"",
+						"services",
+						"oauth2",
+						"token"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create_Lead",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var res=pm.response.json()\r",
+							"var ID=res.id \r",
+							"pm.globals.set(\"SF_ID\",ID)"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{SF_Access_Token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"LastName\":\"Dilip\",\r\n    \"Company\":\"Testleaf\"\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{SF_Instance_Url}}/services/data/v64.0/sobjects/Lead",
+					"host": [
+						"{{SF_Instance_Url}}"
+					],
+					"path": [
+						"services",
+						"data",
+						"v64.0",
+						"sobjects",
+						"Lead"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetLead",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{SF_Access_Token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{SF_Instance_Url}}/services/data/v64.0/sobjects/Lead/{{SF_ID}}",
+					"host": [
+						"{{SF_Instance_Url}}"
+					],
+					"path": [
+						"services",
+						"data",
+						"v64.0",
+						"sobjects",
+						"Lead",
+						"{{SF_ID}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "New Request",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{SF_Access_Token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"Company\":\"TCS\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{SF_Instance_Url}}/services/data/v64.0/sobjects/Lead/{{SF_ID}}",
+					"host": [
+						"{{SF_Instance_Url}}"
+					],
+					"path": [
+						"services",
+						"data",
+						"v64.0",
+						"sobjects",
+						"Lead",
+						"{{SF_ID}}"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
