@@ -1,0 +1,133 @@
+week7.day1
+
+08:45 - 09:00 -> Recap
+09:00 - 09:45 -> Class,Object,AccessModifier
+09:45 - 10:10 -> Breakout+Break
+10:10 - 10:50 -> Inheritance
+10:50 - 11:10 -> Breakout
+11:10 - 11:50 -> Polymorphsim
+11:50 - 12:20 -> Breakout+ break
+12:20 - 01:00 -> Abstraction 
+
+oops with typescript
+
+OOPs-> Object Oriented Programming Language
+-> Object
+java script -> prototype based
+-> Reusability
+-> Maintainable
+-> Readable
+-> Scalability
+-> Redundancy
+-> Modularity
+
+
+Class:
+
+A Class is like a template or buleprint that defines properties and methods 
+to all object of that type.
+
+* properties
+* methods
+* constructor
+
+class Browser{
+
+//properties
+empName:string="Dilip"
+
+//method
+browserDetails(){
+
+}
+
+//constructor
+constructor(user:string){
+this.empName=user
+}
+
+}
+
+this-> will reffer the current class properties and methods
+
+constructor:
+1. Default -> constructor()
+2. paramter -> constructor(user:string,age:number)
+
+
+OOPs:
+
+Inheritance:
+its a relationship between two class
+parent class and child class
+
+types:
+Single Inheritance :  parent -> child
+Multilevel Inheritance : GrandParent -> parent -> child
+Hierarchical Inheritance : browser -> chrome ,browser -> edge , browser->firefox 
+
+ts -> it will  not support mulitple Inheritance -> PA&PB -> PC
+
+keyword: extends
+child extends parent  -> work
+
+parent extends child ->this will not work
+
+
+ClassRoom 2:
+Parent file
+ Create class Browser
+ Create 2 methods browserType, browserVersion
+
+Child file
+Create class Chrome 
+Create 1 method launchBrowser
+create object for Chrome
+
+
+Polymorphsim:
+
+-> many forms
+
+2 types Polymorphsim:
+
+1.Method overloading -> Complie poly
+2.Method overriding -> Run poly
+
+Method overloading:
+Inside the same class we can create multiple method with same Method name,but 
+different paramters should be passed
+
+class Base{
+
+Elementclick(locator:string):void
+Elementclick(locator:string,forceCick:string):void
+
+Elementclick(locator:string){
+
+}
+
+
+}
+
+
+Method overriding:
+use Method overriding -> Inheritance
+connect between two different class with same method signature and paramters only 
+implemenation can change
+
+export class parent{
+
+phone(){
+console.log(iphone 15)
+}
+}
+//object-> iphone 15
+
+clas child extends parent{
+
+phone(){
+console.log(iphone 16 pro)
+}
+}
+//object-> iphone 16 pro
