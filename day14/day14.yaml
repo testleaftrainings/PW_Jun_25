@@ -1,0 +1,138 @@
+week7.day2
+
+08:45 - 09:00 -> Recap
+09:00 - 09:45 -> Abstraction
+09:45 - 10:00 -> Break
+10:00 - 10:30 -> Custom Fixture
+10:30 - 11:45 -> Page Object Model
+11:45 - 12:25 -> Breakout +Break
+12:25 - 01:00 -> Hooks & Grep
+
+
+Abstraction:
+Process of hiding implementation deatils and showing only the essential features
+
+1.Abstract Class
+2.Interface 
+
+Abstract class -> 0 to 100 % Abstract method
+it have both implementation and unimplementation
+
+launch(){ 
+//implementation method
+}
+
+loadUrl():void //unimplementation
+
+
+Interface:
+100% Abstract method
+
+username():void
+password():void
+
+
+
+
+Fixture:
+{page}-> page Fixture -> browser -> context -> page
+{context} -> context Fixture
+-> can be shared across multiple tests
+-> setup -> use in test -> teardown
+
+Custom Fixture:
+user defined fixture
+testfile using test.extend[]
+
+
+Design Pattern:
+POM -> Page Object Model
+based on the webpage 
+
+LoginPage:
+*username
+*password
+*clickonLogin
+
+WelcomePage:
+*Click on crmsfa
+*Logout
+
+MyHomePage:
+*Leads
+*Accounts
+*Cases
+
+MyLeadsPage:
+*CreateLead -click 
+
+
+CreateLead:
+*Cname
+*Fname
+*Lname
+
+ViewLead:
+*verify 
+
+MyAccountPage:
+*CreateAccount
+
+AccountsPage:
+*AccountName
+
+POM:
+*Organizing the code
+*Improved Readability
+*Easy Maintenances
+*Increased Prod
+* Reusability
+
+LoadUrl(){
+url
+}
+
+enteruserdetails(){
+username
+password
+}
+
+
+clickOnLogin(){
+
+}
+
+
+
+Hooks:
+beforeAll	 ->Once before all tests in a file
+afterAll	 ->Once after all tests in a file
+beforeEach ->Before each test in a file
+afterEach	 ->After each test in a file
+
+
+Before: Pre condition
+
+After: Post condition
+
+
+beforeAll: json,csv,Env
+
+beforeEach: storageState
+
+test(Create Lead) 
+
+test(Create Account)
+
+afterEach: Getting Test info
+
+afterAll: Report
+
+BA
+BE
+test
+AE
+BE
+test
+AE
+AA
