@@ -1,0 +1,23 @@
+.env file
+environment variable
+
+.env file will hold your api key , tokens.
+
+Step1
+
+Create file with extension .env
+
+Step2
+install dotenv library to read the data from .env file
+
+npm install dotenv
+
+
+Reading the env file two ways :
+
+1, CLI (Command Line)
+
+set the environment file --> $env:envFile='prod'
+Bydefault the environment id set to be qa
+
+2, different config.ts file
